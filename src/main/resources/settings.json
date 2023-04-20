@@ -1,3 +1,6 @@
 {
+  "baseValue": "7",
+  "expectedName": "Вячеслав",
+  "divisor": "3",
   "maxLengthIntArray": "15"
 }

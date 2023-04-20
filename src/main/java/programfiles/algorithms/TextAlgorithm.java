@@ -1,17 +1,17 @@
 package programfiles.algorithms;
 
-import static helpers.ScannerHelper.inputScanner;
+import static framework.helpers.ScannerHelper.inputScanner;
 import static programfiles.Menu.returnToStartMenuQuestion;
-import static constants.Constants.*;
+import static programfiles.constants.Constants.*;
 
 public class TextAlgorithm {
 
-    public void textAlgorithm() {
-        System.out.println("Введите любое имя, если введете 'Вячеслав', консоль попривествует Вас. " +
+    public void inputNameIsEqualToExpectedName(String expectedName) {
+        System.out.println("Введите любое имя, если введете '" + expectedName + "', консоль попривествует Вас. " +
                 "Других имен программа не знает.\nВведите любое имя: ");
         String name = inputScanner().next();
-        if (name.equalsIgnoreCase("вячеслав")) {
-            System.out.println(String.format(SYSTEM_OUT_SIMPLE, "Привет, Вячеслав"));
+        if (name.equals(expectedName)) {
+            System.out.println(String.format(SYSTEM_OUT_SIMPLE, "Привет, " + name));
         } else {
             System.out.println(String.format(SYSTEM_OUT_SIMPLE, "Нет такого имени"));
         }

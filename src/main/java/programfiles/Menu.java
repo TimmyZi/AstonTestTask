@@ -1,15 +1,15 @@
 package programfiles;
 
-import helpers.RandomHelper;
-import programfiles.algorithms.IntArrayAlgorithm;
+import framework.helpers.RandomHelper;
+import programfiles.algorithms.ArrayAlgorithm;
 import programfiles.algorithms.NumericalAlgorithm;
 import programfiles.algorithms.TextAlgorithm;
 
 import java.util.InputMismatchException;
 
-import static config.ConfigManager.SETTINGS;
-import static constants.Constants.*;
-import static helpers.ScannerHelper.inputScanner;
+import static framework.config.ConfigManager.SETTINGS;
+import static programfiles.constants.Constants.*;
+import static framework.helpers.ScannerHelper.inputScanner;
 
 public class Menu {
 
@@ -19,7 +19,7 @@ public class Menu {
     public static void startMenu() {
         NumericalAlgorithm numericalAlgorithm = new NumericalAlgorithm();
         TextAlgorithm textAlgorithm = new TextAlgorithm();
-        IntArrayAlgorithm intArrayAlgorithm = new IntArrayAlgorithm();
+        ArrayAlgorithm arrayAlgorithm = new ArrayAlgorithm();
         System.out.print("Приветсвую Вас в меню программы" +
                 "\nВведите пожалуйста номер меню для осуществления желаемого действия:" +
                 "\n 1. Запуск задания на ввод целочисленного значения." +
@@ -32,14 +32,14 @@ public class Menu {
             if (menuItem > 0 && menuItem < 5) {
                 switch (menuItem) {
                     case 1:
-                        numericalAlgorithm.numericalAlgorithm();
+                        numericalAlgorithm.inputValueFromConsoleIsHigherThanBaseValue(SETTINGS.get("baseValue").getAsDouble());
                         break;
                     case 2:
-                        textAlgorithm.textAlgorithm();
+                        textAlgorithm.inputNameIsEqualToExpectedName(SETTINGS.get("expectedName").getAsString());
                         break;
                     case 3:
-                        int[] array = RandomHelper.generateRandomArray(SETTINGS.get("maxLengthIntArray").getAsInt());
-                        intArrayAlgorithm.multipleOfThreeAlgorithm(array);
+                        double[] array = RandomHelper.generateRandomArrayDouble(SETTINGS.get("maxLengthIntArray").getAsInt());
+                        arrayAlgorithm.divisionWithoutRemainder(array, SETTINGS.get("divisor").getAsDouble());
                         break;
                     default:
                         System.out.println(END_PROGRAM);

@@ -2,16 +2,16 @@ package programfiles.algorithms;
 
 import java.util.Arrays;
 
-import static constants.Constants.*;
+import static programfiles.constants.Constants.*;
 import static programfiles.Menu.returnToStartMenuQuestion;
 
-public class IntArrayAlgorithm {
+public class ArrayAlgorithm {
 
-    public void multipleOfThreeAlgorithm(int[] array) {
+    public void divisionWithoutRemainder(double[] array, double divisor) {
         System.out.println(String.format(SYSTEM_OUT_SIMPLE, "Представлен масссив: " + Arrays.toString(array) +
-                ", в нем без остатка на 3 делятся числа:"));
-        for (int number : array) {
-            if (number % 3 == 0) {
+                ", в нем без остатка на " + divisor + " делятся числа:"));
+        for (double number : array) {
+            if (number % divisor == 0) {
                 System.out.println(number);
             }
         }

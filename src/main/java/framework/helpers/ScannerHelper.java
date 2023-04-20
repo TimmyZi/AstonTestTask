@@ -1,4 +1,4 @@
-package helpers;
+package framework.helpers;
 
 import java.util.Scanner;
 

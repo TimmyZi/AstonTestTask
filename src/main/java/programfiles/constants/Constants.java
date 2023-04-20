@@ -1,4 +1,4 @@
-package constants;
+package programfiles.constants;
 
 public class Constants {
     public static final String SYSTEM_OUT_SIMPLE = "----------------------------------\n%s\n----------------------------------";
